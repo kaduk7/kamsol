@@ -78,8 +78,8 @@ const Login = () => {
                   className="mt-5 mb-3"
                   alt=""
                 />
-                <h3 className="title">DLHK Kota Pekanbaru</h3>
-                <p>Sistem Pengelolaan Persampahan Pekanbaru</p>
+                <h3 className="title">Tim Kemenangan Pak Kamsol</h3>
+                <p>Sistem Pencatatan dan Informasi Pemilu</p>
               </div>
               <form onSubmit={handleSubmit}>
                 <div className="mb-4">
