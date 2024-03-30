@@ -42,15 +42,7 @@ export default function MenuAdmin() {
                         </a>
                         <ul aria-expanded="false" id="master">
                             <li className="mini-dashboard">Master Data</li>
-                            <li>
-                                <Link href="/admin/zona">Data Zona</Link>
-                            </li>
-                            <li>
-                                <Link href="/admin/rute">Data Rute</Link>
-                            </li>
-                            <li>
-                                <Link href="/admin/tps">Data Tps</Link>
-                            </li>
+                           
                         </ul>
                     </li>
 
@@ -70,43 +62,11 @@ export default function MenuAdmin() {
                         </a>
                         <ul aria-expanded="false" id="master">
                             <li className="mini-dashboard">Setup</li>
-                            <li>
-                                <Link href="/admin/user">Tambah User</Link>
-                            </li>
-                            <li>
-                                <Link href="/admin/ruteuser">Rute User</Link>
-                            </li>
-                            <li>
-                                <Link href="/admin/event">Event</Link>
-                            </li>
+ 
                         </ul>
                     </li>
 
-                    <li>
-                        <a href="#master" className="has-arrow " aria-expanded="false">
-                            <div className="menu-icon">
-                                <svg width={25} height={24} viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M10.6209 16.593H4.32019" stroke="#252525" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    <path d="M13.4313 6.90066H19.732" stroke="#252525" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    <path fillRule="evenodd" clipRule="evenodd" d="M9.01706 6.84625C9.01706 5.5506 7.9589 4.5 6.65392 4.5C5.34893 4.5 4.29077 5.5506 4.29077 6.84625C4.29077 8.14191 5.34893 9.19251 6.65392 9.19251C7.9589 9.19251 9.01706 8.14191 9.01706 6.84625Z" stroke="#252525" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                    <path fillRule="evenodd" clipRule="evenodd" d="M20.2907 16.5533C20.2907 15.2576 19.2334 14.207 17.9284 14.207C16.6226 14.207 15.5645 15.2576 15.5645 16.5533C15.5645 17.8489 16.6226 18.8995 17.9284 18.8995C19.2334 18.8995 20.2907 17.8489 20.2907 16.5533Z" stroke="#252525" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                                </svg>
-                            </div>
-                            <span className="nav-text">App Setting</span>
-                        </a>
-                        <ul aria-expanded="false" id="master">
-                            <li className="mini-dashboard">App Setting</li>
-                            <li>
-                                <Link href="/admin/slide">Slide</Link>
-                            </li>
-                            {/* <li>
-                                <Link href="/master/profil">Setting</Link>
-                            </li> */}
-                            <li>
-                                <Link href="/admin/pengumuman">Pengumuman</Link>
-                            </li>
-                        </ul>
-                    </li>
+                    
 
                 </ul>
                 <div className="switch-btn">
