@@ -6,7 +6,7 @@ import Update from './action/Update';
 import Delete from './action/Delete';
 import { supabaseBUCKET, supabaseUrl, tanggalIndo } from "@/app/helper";
 
-const Pengumuman = () => {
+const Berita = () => {
   const [databerita, setDataberita] = useState([])
   const [filterText, setFilterText] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
@@ -42,7 +42,7 @@ const Pengumuman = () => {
         <div className="d-flex mb-3 mt-3">
           <img
             src={`${supabaseUrl}/storage/v1/object/public/${supabaseBUCKET}/foto-berita/${row.foto}`}
-            width='100%'
+            width={150}
             height={100}
             alt=""
           />
@@ -119,4 +119,4 @@ const Pengumuman = () => {
   )
 }
 
-export default Pengumuman
+export default Berita
