@@ -137,7 +137,7 @@ function Update({ berita, reload }: { berita: BeritaTb, reload: Function }) {
                     </Modal.Header>
                     <Modal.Body>
                         <div className="mb-3 row">
-                            <div className="col-sm-9">
+                            <div className="col-sm-8">
                                 <div className="mb-3 row">
                                     <label className="col-sm-3 col-form-label" >Tanggal Berita</label>
                                     <div className="col-sm-9">
@@ -172,7 +172,7 @@ function Update({ berita, reload }: { berita: BeritaTb, reload: Function }) {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-sm-3">
+                            <div className="col-sm-4">
                                 {file ?
                                     <div className="">
                                         <img
