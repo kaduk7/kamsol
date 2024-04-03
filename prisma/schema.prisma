@@ -47,3 +47,22 @@ model SlideTb {
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
 }
+
+model SimpatisanTb {
+  id               Int      @id @default(autoincrement())
+  NIK              String   @unique
+  nama             String
+  tempatLahir      String
+  tanggalLahir     DateTime
+  jekel            String
+  golDarah         String
+  alamat           String
+  agama            String
+  statusPerkawinan String
+  pekerjaan        String
+  kewarganegaraan  String
+  berlakuHingga    String
+  foto             String
+  createdAt        DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+}

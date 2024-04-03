@@ -42,6 +42,9 @@ export default function MenuSuperadmin() {
                         </a>
                         <ul aria-expanded="false" id="master">
                             <li className="mini-dashboard">Master Data</li>
+                            <li>
+                                <Link href="/superadmin/simpatisan">Data Simpatisan</Link>
+                            </li>
                         </ul>
                     </li>
 
@@ -62,6 +65,7 @@ export default function MenuSuperadmin() {
                             <li>
                                 <Link href="/superadmin/admin">Tambah Admin</Link>
                             </li>
+                            
                         </ul>
                     </li>
 
