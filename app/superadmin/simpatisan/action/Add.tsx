@@ -13,7 +13,8 @@ function Add({ reload }: { reload: Function }) {
     const [tanggalLahir, setTanggallahir] = useState(tanggalHariIni)
     const [alamat, setAlamat] = useState('')
     const [agama, setAgama] = useState('')
-    const [jekel, setJekel] = useState('')
+    const [jekel, setJekel] = useState("LAKI-LAKI")
+    const [rincian, setRincian] = useState("Ya")
     const [golDarah, setGoldarah] = useState('')
     const [status, setStatus] = useState('')
     const [pekerjaan, setPekerjaan] = useState('')
@@ -66,7 +67,7 @@ function Add({ reload }: { reload: Function }) {
         setTanggallahir(tanggalHariIni)
         setAlamat('')
         setAgama('')
-        setJekel('')
+        setJekel('LAKI-LAKI')
         setGoldarah('')
         setStatus('')
         setPekerjaan('')
@@ -252,23 +253,58 @@ function Add({ reload }: { reload: Function }) {
                             </div>
                             <div className="mb-3 col-md-6">
                                 <label className="form-label" >Agama</label>
-                                <input
+                                <select
                                     required
-                                    type="text"
                                     className="form-control"
-                                    value={agama} onChange={(e) => setAgama(e.target.value)}
-                                />
+                                    value={agama} onChange={(e) => setAgama(e.target.value)}>
+                                    <option value={''}> Pilih Agama</option>
+                                    <option value={'ISLAM'}>ISLAM</option>
+                                    <option value={'KRISTEN'}>KRISTEN</option>
+                                    <option value={'PROTESTAN'}>PROTESTAN</option>
+                                    <option value={'HINDU'}>HINDU</option>
+                                    <option value={'BUDHA'}>BUDHA</option>
+                                </select>
                             </div>
                         </div>
                         <div className="row">
                             <div className="mb-3 col-md-6">
                                 <label className="form-label" >Jenis Kelamin</label>
-                                <input
-                                    required
-                                    type="text"
-                                    className="form-control"
-                                    value={jekel} onChange={(e) => setJekel(e.target.value)}
-                                />
+                                <div className="row">
+                                    <div className="mb-3 col-md-6">
+                                        <div className="form-check ">
+                                            <input
+                                                type="radio"
+                                                className="form-check-input"
+                                                id="customRadioBox1"
+                                                name="optradioCustom"
+                                                value={jekel}
+                                                checked={jekel === 'LAKI-LAKI'}
+                                                onChange={() => setJekel('LAKI-LAKI')}
+                                            />
+                                            <label className="form-check-label" htmlFor="customRadioBox1">
+                                                LAKI-LAKI
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div className="mb-3 col-md-6">
+                                        <div className="form-check ">
+                                            <input
+                                                type="radio"
+                                                className="form-check-input"
+                                                id="customRadioBox2"
+                                                name="optradioCustom"
+                                                value={jekel}
+                                                checked={jekel === 'PEREMPUAN'}
+                                                onChange={() => setJekel('PEREMPUAN')}
+
+                                            />
+                                            <label className="form-check-label" htmlFor="customRadioBox2">
+                                                PEREMPUAN
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div className="mb-3 col-md-6">
                                 <label className="form-label" >Gol Darah</label>
@@ -303,12 +339,14 @@ function Add({ reload }: { reload: Function }) {
                         <div className="row">
                             <div className="mb-3 col-md-6">
                                 <label className="form-label" >Kewarganegaraan</label>
-                                <input
+                                <select
                                     required
-                                    type="text"
                                     className="form-control"
-                                    value={kewarganegaraan} onChange={(e) => setKewarganegaraan(e.target.value)}
-                                />
+                                    value={kewarganegaraan} onChange={(e) => setKewarganegaraan(e.target.value)}>
+                                    <option value={''}> Pilih</option>
+                                    <option value={'WNI'}>WNI</option>
+                                    <option value={'WNA'}>WNA</option>
+                                </select>
                             </div>
                             <div className="mb-3 col-md-6">
                                 <label className="form-label" >Berlaku Sampai</label>
