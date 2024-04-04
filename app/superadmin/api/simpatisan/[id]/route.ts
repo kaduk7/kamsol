@@ -6,17 +6,6 @@ const prisma = new PrismaClient()
 export const PATCH = async (request: Request, { params }: { params: { id: string } }) => {
     const formData = await request.formData()
     const newfoto = formData.get('newfoto')
-    const ceknik = await prisma.simpatisanTb.findMany({
-        where: {
-            NIK: String(formData.get('NIK')),
-            NOT: {
-                id: Number(params.id)
-            }
-        }
-    })
-    if (ceknik.length > 0) {
-        return NextResponse.json({ status: 555, pesan: "sudah ada nik" })
-    }
     await prisma.simpatisanTb.update({
         where: {
             id: Number(params.id)

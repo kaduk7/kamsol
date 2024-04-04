@@ -98,45 +98,36 @@ function Update({ simpatisan, reload }: { simpatisan: SimpatisanTb, reload: Func
             const namaunik = Date.now() + '-' + image.name
             formData.append('namaunik', namaunik)
 
+            if (newfoto === 'yes') {
+                await supabase.storage
+                    .from(supabaseBUCKET)
+                    .remove([`foto-simpatisan/${simpatisan.foto}`]);
+
+                const uploadResult = await supabase.storage
+                    .from(supabaseBUCKET)
+                    .upload(`foto-simpatisan/${namaunik}`, image)
+
+                if (uploadResult.error) {
+                    setIsLoading(false)
+                    reload()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'warning',
+                        title: 'Gagal Upload Gambar',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                    throw uploadResult.error
+                }
+                setFoto(namaunik)
+            }
+
             const xxx = await axios.patch(`/superadmin/api/simpatisan/${simpatisan.id}`, formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
             })
-            if (xxx.data.pesan == 'sudah ada nik') {
-                setIsLoading(false)
-                Swal.fire({
-                    position: 'top-end',
-                    icon: 'warning',
-                    title: 'No hp ini sudah terdaftar',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-            }
             if (xxx.data.pesan == 'berhasil') {
-                if (newfoto === 'yes') {
-                    await supabase.storage
-                        .from(supabaseBUCKET)
-                        .remove([`foto-simpatisan/${simpatisan.foto}`]);
-
-                    const uploadResult = await supabase.storage
-                        .from(supabaseBUCKET)
-                        .upload(`foto-simpatisan/${namaunik}`, image)
-
-                    if (uploadResult.error) {
-                        setIsLoading(false)
-                        reload()
-                        Swal.fire({
-                            position: 'top-end',
-                            icon: 'warning',
-                            title: 'Gagal Upload Gambar',
-                            showConfirmButton: false,
-                            timer: 1500
-                        })
-                        throw uploadResult.error
-                    }
-                    setFoto(namaunik)
-                }
                 setShow(false);
                 setIsLoading(false)
                 reload()

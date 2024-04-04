@@ -110,7 +110,7 @@ function Add({ reload }: { reload: Function }) {
                 Swal.fire({
                     position: 'top-end',
                     icon: 'warning',
-                    title: 'No Hp sudah terdaftar',
+                    title: 'No NIK sudah terdaftar',
                     showConfirmButton: false,
                     timer: 1500
                 })
