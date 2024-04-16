@@ -9,8 +9,8 @@ export const POST = async (request: Request) => {
     const formData = await request.formData()
     await prisma.pengumumanTb.create({
         data: {
-            judul: mapData.judul,
-            isi: mapData.isi,
+            judul: body.judul,
+            isi: body.isi,
         }
     })
     return NextResponse.json({ pesan: 'berhasil' })
