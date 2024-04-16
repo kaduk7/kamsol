@@ -5,11 +5,11 @@ const prisma = new PrismaClient()
 
 export const POST = async (request: Request) => {
     const body: any = await request.json();
-    const data = JSON.parse(body.data);
+    // const data = JSON.parse(body.data);
     await prisma.pengumumanTb.create({
         data: {
-            judul: data.judul,
-            isi: data.isi,
+            judul: body.judul,
+            isi: body.isi,
         }
     })
     return NextResponse.json({ pesan: 'berhasil' })
