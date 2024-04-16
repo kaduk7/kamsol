@@ -5,15 +5,14 @@ import { json } from "stream/consumers";
 const prisma = new PrismaClient()
 
 export const POST = async (request: Request) => {
-    const { judul, isi } = await request.json(); // Mengurai dan mengambil judul dan isi dari request
-        
-    const pengumuman = await prisma.pengumumanTb.create({
+    const body: any = await request.json();
+    await prisma.pengumumanTb.create({
         data: {
-            judul: judul, // Menyimpan judul
-            isi: isi      // Menyimpan isi
+            judul: body.judul,
+            isi: body.isi,
         }
-    });
-    return NextResponse.json({ pesan: 'berhasil',data: pengumuman })
+    })
+    return NextResponse.json({ pesan: 'berhasil' })
 }
 
 export const GET = async () => {
