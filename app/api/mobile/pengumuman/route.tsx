@@ -4,13 +4,11 @@ import { PrismaClient } from "@prisma/client"
 const prisma = new PrismaClient()
 
 export const POST = async (request: Request) => {
-    const body: any = await request.json();
-    const mapData = JSON.parse(body.data);
-    const formData = await request.formData()
+    const data = await request.json();
     await prisma.pengumumanTb.create({
         data: {
-            judul: body.judul,
-            isi: body.isi,
+            judul: data.judul,
+            isi: data.isi,
         }
     })
     return NextResponse.json({ pesan: 'berhasil' })
