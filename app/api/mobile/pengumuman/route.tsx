@@ -16,10 +16,10 @@ export const POST = async (request: Request) => {
 }
 
 export const GET = async () => {
-    const user = await prisma.pengumumanTb.findMany({
+    const pengumuman = await prisma.pengumumanTb.findMany({
         orderBy: {
             judul: 'asc'
         }
     });
-    return NextResponse.json(user, { status: 200 })
+    return NextResponse.json({ pesan: 'berhasil',data: pengumuman })
 }
