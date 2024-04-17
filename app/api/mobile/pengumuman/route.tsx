@@ -5,7 +5,7 @@ import { json } from "stream/consumers";
 const prisma = new PrismaClient()
 
 export const POST = async (request: Request) => {
-    const body: any = await request.json();
+    const body = await request.json();
     await prisma.pengumumanTb.create({
         data: {
             judul: body.judul,
